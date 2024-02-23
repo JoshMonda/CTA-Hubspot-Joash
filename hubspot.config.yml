@@ -1,0 +1,12 @@
+defaultPortal: 'o[3~t:Joash'
+portals:
+  - name: 'o[3~t:Joash'
+    portalId: 45350943
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CJfH3LHdMRIRAAUAQAAAAGwAQAJYAgEAAAgYn4DQFSC4h9ceKO7pDDIU7dSnJwr9U5yuMvGDyVNKyWznvSE6QQAABEEAAAAAAAAAAAAAAAAAgAAAAAAABAAAAAAAAAAAPGBQAABEAABA_BgGABAgAwAAAAAADAAAAAAAAAAAAAAEQhRrak9WO8dWzVW-nNvT4LlBjKOs8UoDbmExUgBaAA
+        expiresAt: '2024-02-23T13:45:54.347Z'
+    personalAccessKey: >-
+      CiRkY2MzZjZiZi0zNmEzLTRlNDEtYmU3Yy1iOTdiMzA1NTM0MjAQn4DQFRi4h9ceKhkABeaRggcPEkVRpQzjjc8U9Lb72IQPOYiASgNuYTE
