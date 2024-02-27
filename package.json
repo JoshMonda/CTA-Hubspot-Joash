@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "@hubspot/cms-cli": "^2.2.3"
+    "@hubspot/cms-cli": "^2.2.3",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   }
 }

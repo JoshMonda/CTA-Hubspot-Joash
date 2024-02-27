@@ -1,0 +1,102 @@
+<link rel="stylesheet" type="text/css" href="cta-style.css">
+<div class="main-container row">
+  
+<div class="col-lg-6">
+  {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+</div>
+  
+<div class="col-lg-6">
+  {% inline_rich_text field="richtext_field_1" value="{{ module.richtext_field_1 }}" %}
+</div>
+  
+  <div class="col-lg-6">
+ {% inline_rich_text field="richtext_field_2" value="{{ module.richtext_field_2 }}" %}
+</div>
+  
+     <div class="col-lg-6">
+  {% set href = module.button.url.href %}
+{% if module.button.url.type is equalto "EMAIL_ADDRESS" %}
+	{% set href = "mailto:" + href %}
+{% endif %}
+<a href="{{ href }}"
+	{% if module.button.open_in_new_tab %}target="_blank"{% endif %}
+	{% if module.button.rel %}rel="{{ module.button.rel }}"{% endif %}
+	>
+	Get Started
+</a>
+</div>
+  
+  <div class="col-lg-6">
+ {% if module.image.src %}
+	{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+	{% if module.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+	<img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+{% endif %}
+    
+    
+    {% if module.image2.src %}
+	{% set sizeAttrs = 'width="{{ module.image2.width }}" height="{{ module.image2.height }}"' %}
+	{% if module.image2.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.image2.width }}" height="{{ module.image2.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.image2.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image2.max_width }}" height="{{ module.image2.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image2.loading != 'disabled' ? 'loading="{{ module.image2.loading }}"' : '' %}
+	<img src="{{ module.image2.src }}" alt="{{ module.image2.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+{% endif %}
+    
+</div>
+
+</div>
+
+{% require_css %}
+<style>
+  {% scope_css %}
+  .main-container {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: {{ module.bg_color.color }};
+    text-align: center; /* Ensures text and inline elements like buttons are centered */
+
+  }
+  .main-container .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Ensures text and inline elements like buttons are centered within each column */
+  }
+
+  .main-container .button, .main-container a {
+    display: inline-block; /* Allows the use of margin auto */
+    padding: 10px 20px;
+    background-color: #007bff; /* Example button color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px auto; /* Adds space above the button and centers it horizontally */
+  }
+
+  .main-container img {
+    padding: 10px 20px;
+    width: 600px; /* Set image width */
+    height: 600px; /* Set image height */
+    margin: 0 30%; /* Adds margin to the left and right of the image */
+    object-fit: cover; 
+    margin: 0 15px;
+    display: flex; /* Enables flexbox layout, arranging children in a row */
+   
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+
+
